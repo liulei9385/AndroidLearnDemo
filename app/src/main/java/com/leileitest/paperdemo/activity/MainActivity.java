@@ -49,10 +49,7 @@ public class MainActivity extends BaseActivity {
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.drawer_open,
                 R.string.drawer_close);
         mDrawerLayout.setDrawerListener(mDrawerToggle);
-
         mNavigationView = findView(R.id.navigation_view);
-        fixSystemBar(mNavigationView);
-
         recyclerView = findView(R.id.recyclerView);
 
     }
@@ -131,8 +128,8 @@ public class MainActivity extends BaseActivity {
         }
 
         @Override
-        public ActEntity getItemAtPosition(int postion) {
-            return super.getItemAtPosition(postion);
+        public ActEntity getItemAtPosition(int position) {
+            return super.getItemAtPosition(position);
         }
 
         @Override

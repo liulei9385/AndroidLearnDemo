@@ -19,12 +19,19 @@ android {
     }
 }
 
+repositories {
+    maven {
+        url "https://jitpack.io"
+    }
+}
+
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:recyclerview-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
     compile 'com.android.support:palette-v7:23.1.1'
-    compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+    compile 'com.github.luckyandyzhang:StatusBarCompat:1.0.1'
+    //compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
     compile 'io.paperdb:paperdb:1.1'
 }

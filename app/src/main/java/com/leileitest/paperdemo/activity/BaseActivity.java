@@ -4,12 +4,12 @@ import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -19,7 +19,8 @@ import android.widget.Toast;
 import com.leileitest.paperdemo.R;
 import com.leileitest.paperdemo.listener.UiClickListener;
 import com.leileitest.paperdemo.listener.UiLoadListener;
-import com.readystatesoftware.systembartint.SystemBarTintManager;
+
+import luckyandyzhang.github.io.statusbarcompat.StatusBarCompat;
 
 /**
  * Created by liulei
@@ -32,7 +33,6 @@ public abstract class BaseActivity extends AppCompatActivity
     protected Toolbar mToolbar;
     private String actionBarTitle;
     private boolean hasDrawer = false;  //是否有抽屉
-    private SystemBarTintManager tintManager;
     private Toast toast;
 
     public void setHasDrawer(boolean hasDrawer) {
@@ -47,7 +47,13 @@ public abstract class BaseActivity extends AppCompatActivity
 
     private void initSomeWork() {
         setContentView(getLayoutResId());
-        initSystemBar();
+        //initSystemBar();
+        setTranslucentStatus(true);
+        int statusBarColor = ContextCompat.getColor(this, R.color.colorPrimaryDark);
+        if (hasDrawer)
+            StatusBarCompat.init(this, statusBarColor, StatusBarCompat.Style.FILL);
+        else
+            StatusBarCompat.init(this, statusBarColor, StatusBarCompat.Style.NORMAL);
 
         mToolbar = findView(R.id.toolbar);
         setSupportActionBar(mToolbar);
@@ -79,17 +85,17 @@ public abstract class BaseActivity extends AppCompatActivity
         }
     }
 
-    private void initSystemBar() {
+   /* private void initSystemBar() {
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+        *//*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             setTranslucentStatus(true);
         }
 
-        if (tintManager == null)
+        *//**//*if (tintManager == null)
             tintManager = new SystemBarTintManager(this);
         tintManager.setStatusBarTintEnabled(true);
         tintManager.setNavigationBarTintEnabled(true);
-        tintManager.setStatusBarTintResource(R.color.colorPrimaryDark);
+        tintManager.setStatusBarTintResource(R.color.colorPrimaryDark);*//**//*
         //tintManager.setStatusBarTintColor(0x80303F9F);
 
         View rootView = findView(R.id.rootLayout);
@@ -101,14 +107,16 @@ public abstract class BaseActivity extends AppCompatActivity
         int right = rootView.getPaddingRight();
         //config.getPixelInsetTop(), config.getPixelInsetRight(), config.getPixelInsetBottom()
         rootView.setPadding(left, top + config.getPixelInsetTop(false), right + config.getPixelInsetRight(),
-                bottom + config.getPixelInsetBottom());
-    }
+                bottom + config.getPixelInsetBottom());*//*
+    }*/
+
+   /* */
 
     /**
      * 修复toolbar不正常的问题
      *
      * @param rootView 当前布局的顶层view
-     */
+     *//*
     public void fixSystemBar(View rootView) {
         SystemBarTintManager.SystemBarConfig config = tintManager.getConfig();
         int top = rootView.getPaddingTop();
@@ -118,8 +126,7 @@ public abstract class BaseActivity extends AppCompatActivity
         //config.getPixelInsetTop(), config.getPixelInsetRight(), config.getPixelInsetBottom()
         rootView.setPadding(left, top + config.getPixelInsetTop(false), right + config.getPixelInsetRight(),
                 bottom + config.getPixelInsetBottom());
-    }
-
+    }*/
     @TargetApi(Build.VERSION_CODES.KITKAT)
     private void setTranslucentStatus(boolean on) {
         Window win = getWindow();
