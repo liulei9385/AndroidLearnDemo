@@ -14,7 +14,7 @@ import java.util.List;
  * DATE: 2015/3/20.
  * TIME: 16:33
  */
-public abstract class IBaseRecyclerAdapter<VH extends RecyclerView.ViewHolder>
+public abstract class IBaseRecyclerAdapter<T, VH extends RecyclerView.ViewHolder>
         extends RecyclerView.Adapter<VH> {
     protected Context context;
     protected List<?> dataList;
@@ -22,7 +22,7 @@ public abstract class IBaseRecyclerAdapter<VH extends RecyclerView.ViewHolder>
     private OnItemClickListener itemClickListener;
 
     @SuppressWarnings("unchecked")
-    public <T> IBaseRecyclerAdapter(Context context, List<T> tList) {
+    public IBaseRecyclerAdapter(Context context, List<T> tList) {
         this.dataList = new ArrayList<Object>();
         if (tList != null) {
             ((List<T>) this.dataList).addAll(tList);
@@ -32,7 +32,7 @@ public abstract class IBaseRecyclerAdapter<VH extends RecyclerView.ViewHolder>
     }
 
     @SuppressWarnings("unchecked")
-    public <T> void addItemAll(List<T> tList) {
+    public void addItemAll(List<T> tList) {
         if (this.dataList == null)
             this.dataList = new ArrayList<T>();
         if (tList == null) return;
@@ -40,7 +40,7 @@ public abstract class IBaseRecyclerAdapter<VH extends RecyclerView.ViewHolder>
     }
 
     @SuppressWarnings("unchecked")
-    public <T> void addItem(T t) {
+    public void addItem(T t) {
         if (this.dataList == null)
             this.dataList = new ArrayList<T>();
         if (t == null) return;
@@ -48,7 +48,7 @@ public abstract class IBaseRecyclerAdapter<VH extends RecyclerView.ViewHolder>
     }
 
     @SuppressWarnings("unchecked")
-    public <T> void addItem(int index, T t) {
+    public void addItem(int index, T t) {
         if (this.dataList == null)
             this.dataList = new ArrayList<T>();
         if (t == null) return;
@@ -56,7 +56,7 @@ public abstract class IBaseRecyclerAdapter<VH extends RecyclerView.ViewHolder>
     }
 
     @SuppressWarnings("unchecked")
-    public <T> void removeItem(int index) {
+    public void removeItem(int index) {
         if (this.dataList == null) {
             this.dataList = new ArrayList<T>();
             return;
@@ -65,7 +65,7 @@ public abstract class IBaseRecyclerAdapter<VH extends RecyclerView.ViewHolder>
     }
 
     @SuppressWarnings("unchecked")
-    public <T> T getItemAtPosition(int postion) {
+    public T getItemAtPosition(int postion) {
         return (T) this.dataList.get(postion);
     }
 
@@ -116,7 +116,7 @@ public abstract class IBaseRecyclerAdapter<VH extends RecyclerView.ViewHolder>
     }
 
     @SuppressWarnings("unchecked")
-    public <T> List<T> getDataList() {
+    public List<T> getDataList() {
         return (List<T>) dataList;
     }
 

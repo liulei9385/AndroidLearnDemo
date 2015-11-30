@@ -18,7 +18,7 @@ import java.util.List;
  * 22:00
  * 2015/11/29
  */
-public class SimpleRecyclerListAdapter<T> extends IBaseRecyclerAdapter<SimpleRecyclerListAdapter.SimpleHolder> {
+public class SimpleRecyclerListAdapter extends IBaseRecyclerAdapter<String, SimpleRecyclerListAdapter.SimpleHolder> {
 
     private int layoutResId;
     private AdaperCallback callback;
@@ -31,7 +31,7 @@ public class SimpleRecyclerListAdapter<T> extends IBaseRecyclerAdapter<SimpleRec
         void onBindView(SimpleHolder holder, int position);
     }
 
-    public SimpleRecyclerListAdapter(Context context, @LayoutRes int itemLayout, List<T> tList) {
+    public SimpleRecyclerListAdapter(Context context, @LayoutRes int itemLayout, List<String> tList) {
         super(context, tList);
         this.layoutResId = itemLayout;
     }

@@ -167,7 +167,7 @@ public class PagerDemoActivity extends BaseActivity {
         });
     }
 
-    public class SimpleItemAdapter extends IBaseRecyclerAdapter<SimpleItemAdapter.ViewHolder> {
+    public class SimpleItemAdapter extends IBaseRecyclerAdapter<String,SimpleItemAdapter.ViewHolder> {
 
         public SimpleItemAdapter(Context context, List<String> ts) {
             super(context, ts);

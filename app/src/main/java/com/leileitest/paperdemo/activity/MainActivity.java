@@ -87,6 +87,8 @@ public class MainActivity extends BaseActivity {
         recyclerAdapter.addItem(actEntity);
         actEntity = new ActEntity(ViewPagerDemoActivity.class);
         recyclerAdapter.addItem(actEntity);
+        actEntity = new ActEntity(CleverRecyclerViewDemoActivity.class);
+        recyclerAdapter.addItem(actEntity);
         recyclerAdapter.notifyDataSetChanged();
     }
 
@@ -121,7 +123,8 @@ public class MainActivity extends BaseActivity {
         });
     }
 
-    public class MainRecyclerAdapter extends IBaseRecyclerAdapter<MainRecyclerAdapter.MainViewHolder> {
+    public class MainRecyclerAdapter extends IBaseRecyclerAdapter<ActEntity,
+            MainRecyclerAdapter.MainViewHolder> {
 
         public MainRecyclerAdapter(Context context, List<ActEntity> actEntityList) {
             super(context, actEntityList);

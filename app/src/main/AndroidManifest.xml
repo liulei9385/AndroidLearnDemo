@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.leileitest.paperdemo">
+<manifest package="com.leileitest.paperdemo"
+          xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:name=".app.DemoApplication"
@@ -14,14 +14,16 @@
 
         <activity android:name=".activity.MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.PagerDemoActivity" />
+        <activity android:name=".activity.PagerDemoActivity"/>
 
-        <activity android:name=".activity.ViewPagerDemoActivity" />
+        <activity android:name=".activity.ViewPagerDemoActivity"/>
+
+        <activity android:name=".activity.CleverRecyclerViewDemoActivity"/>
 
     </application>
 

@@ -137,7 +137,7 @@ public class WrapHeightViewPager<T> extends ViewPager {
         linearLayoutManager.setVerticalSpace(verticalSpace);
         linearLayoutManager.setSpanRows(spanRows);
         mRecyclerView.setLayoutManager(linearLayoutManager);
-        SimpleRecyclerListAdapter<String> simpleAdapter = new SimpleRecyclerListAdapter<>(getContext(),
+        SimpleRecyclerListAdapter simpleAdapter = new SimpleRecyclerListAdapter(getContext(),
                 R.layout.pager_adapter_item, null);
         mRecyclerView.setAdapter(simpleAdapter);
         return mRecyclerView;
@@ -190,6 +190,7 @@ public class WrapHeightViewPager<T> extends ViewPager {
             return view == object;
         }
 
+        @SuppressWarnings("unchecked")
         @Override
         public Object instantiateItem(final ViewGroup container, final int page) {
             RecyclerView mRecyclerView = createSimpleListRecyclerView(rows, colums);
@@ -248,7 +249,7 @@ public class WrapHeightViewPager<T> extends ViewPager {
             if (end > dataList.size())
                 end = dataList.size();
             if (start <= end) {
-                adapter.addItemAll(dataList.subList(start, end));
+                adapter.addItemAll((List<String>) dataList.subList(start, end));
                 adapter.notifyDataSetChanged();
             }
 
