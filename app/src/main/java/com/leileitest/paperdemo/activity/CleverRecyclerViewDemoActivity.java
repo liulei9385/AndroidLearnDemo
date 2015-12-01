@@ -51,6 +51,7 @@ public class CleverRecyclerViewDemoActivity extends BaseActivity {
          * <p>注意：此方法必须在{@link CleverRecyclerView#setAdapter(Adapter)}之后调用
          */
         mCleverRecyclerView.setVisibleChildCount(1);
+        mCleverRecyclerView.setFlingFriction(0.65f);
     }
 
     @Override

@@ -26,6 +26,8 @@
 
         <activity android:name=".activity.CleverRecyclerViewDemoActivity"/>
 
+        <activity android:name=".activity.DialogActivity"/>
+
     </application>
 
 </manifest>
