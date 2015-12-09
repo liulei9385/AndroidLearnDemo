@@ -55,6 +55,7 @@ public class FixViewPagerActivity extends BaseActivity {
 
     private void loadData() {
         List<Object> senceInfoList = new ArrayList<>();
+        senceInfoList.add(new LastItem(null, "最后一个"));
         Random random = new Random();
         for (int i = 0; i < 12 + random.nextInt(5); i++) {
             SenceInfo senceInfo = new SenceInfo();
@@ -63,6 +64,7 @@ public class FixViewPagerActivity extends BaseActivity {
             senceInfoList.add(senceInfo);
         }
         senceInfoList.add(new LastItem(null, "最后一个"));
+
         //noinspection unchecked
         sceneAdapter.setList(senceInfoList);
         //viewPager.setAdapter(sceneAdapter);

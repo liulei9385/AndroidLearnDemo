@@ -44,14 +44,22 @@ public class WrapHeightViewPagerWithSmart extends ViewPager {
                 break;
         }
 
-        if (getChildCount() > 0) {
-            View view = getChildAt(0);
-            view.measure(0, 0);
+        int childCount = getChildCount();
+        if (childCount > 0) {
+            int viewHeight = 0;
+            for (int i = 0; i < childCount; i++) {
+                View view = getChildAt(i);
+                view.measure(0, 0);
+                int tempHeight = view.getMeasuredHeight();
+                if (viewHeight < tempHeight)
+                    viewHeight = tempHeight;
+            }
+
             if (mode == MeasureSpec.AT_MOST) {
-                measureHeight = Math.max(measureHeight, view.getMeasuredHeight());
+                measureHeight = Math.max(measureHeight, viewHeight);
             } else {
                 //已子view的高度为准
-                measureHeight = Math.max(measureHeight, view.getMeasuredHeight());
+                measureHeight = Math.max(measureHeight, viewHeight);
             }
         }
         setMeasuredDimension(getDefaultSize(0, widthMeasureSpec), measureHeight);

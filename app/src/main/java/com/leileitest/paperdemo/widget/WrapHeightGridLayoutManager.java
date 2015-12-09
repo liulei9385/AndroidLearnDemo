@@ -62,16 +62,25 @@ public class WrapHeightGridLayoutManager extends GridLayoutManager {
         //super.onMeasure(recycler, state, widthSpec, heightSpec);
         if (measuredHeight <= 0) {
             if (getItemCount() > 0) {
-                View firstView = recycler.getViewForPosition(0);
-                if (firstView != null) {
-                    measureChild(firstView, widthSpec, heightSpec);
-                    measuredWidth = View.MeasureSpec.getSize(widthSpec);
-                    int exrasHeight = mRecyclerView.getPaddingTop() + mRecyclerView.getPaddingBottom();
-                    exrasHeight += verticalSpace * (spanRows - 1);
-                    measuredHeight = firstView.getMeasuredHeight() * spanRows + exrasHeight;
-                }
+                measuredWidth = View.MeasureSpec.getSize(widthSpec);
+                int exrasHeight = mRecyclerView.getPaddingTop() + mRecyclerView.getPaddingBottom();
+                exrasHeight += verticalSpace * (spanRows - 1);
+                int viewHeight = findProperHeight(recycler, widthSpec, heightSpec);
+                measuredHeight = viewHeight * spanRows + exrasHeight;
             }
         }
         setMeasuredDimension(measuredWidth, measuredHeight);
+    }
+
+    private int findProperHeight(RecyclerView.Recycler recycler, int widthSpec, int heightSpec) {
+        int count = getItemCount();
+        int findHeight = 0;
+        for (int i = 0; i < count; i++) {
+            View findView = recycler.getViewForPosition(i);
+            if (findView == null) continue;
+            measureChild(findView, widthSpec, heightSpec);
+            findHeight = Math.max(findHeight, findView.getMeasuredHeight());
+        }
+        return findHeight;
     }
 }
