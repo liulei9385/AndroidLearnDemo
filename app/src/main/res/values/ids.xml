@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="indicator_text" type="id" />
+    <item name="savePos" type="id"/>
+    <item name="saveShouldUpdateViewPager" type="id"/>
 </resources>

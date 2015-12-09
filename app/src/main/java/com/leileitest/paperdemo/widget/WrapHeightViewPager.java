@@ -1,4 +1,4 @@
-package com.leileitest.paperdemo.layout;
+package com.leileitest.paperdemo.widget;
 
 import android.content.Context;
 import android.graphics.Rect;

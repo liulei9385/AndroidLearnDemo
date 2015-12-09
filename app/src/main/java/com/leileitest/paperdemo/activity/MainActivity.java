@@ -91,6 +91,8 @@ public class MainActivity extends BaseActivity {
         recyclerAdapter.addItem(actEntity);
         actEntity = new ActEntity(DialogActivity.class);
         recyclerAdapter.addItem(actEntity);
+        actEntity = new ActEntity(FixViewPagerActivity.class);
+        recyclerAdapter.addItem(actEntity);
         recyclerAdapter.notifyDataSetChanged();
     }
 

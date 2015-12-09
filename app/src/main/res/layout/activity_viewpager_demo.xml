@@ -26,7 +26,7 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp" />
 
-    <com.leileitest.paperdemo.layout.WrapHeightViewPager
+    <com.leileitest.paperdemo.widget.WrapHeightViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

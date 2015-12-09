@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.leileitest.paperdemo"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest
+    package="com.leileitest.paperdemo"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -27,6 +28,8 @@
         <activity android:name=".activity.CleverRecyclerViewDemoActivity"/>
 
         <activity android:name=".activity.DialogActivity"/>
+
+        <activity android:name=".activity.FixViewPagerActivity"/>
 
     </application>
 

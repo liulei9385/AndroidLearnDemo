@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.leileitest.paperdemo.R;
-import com.leileitest.paperdemo.layout.WrapHeightViewPager;
+import com.leileitest.paperdemo.widget.WrapHeightViewPager;
 import com.leileitest.paperdemo.utils.ViewUtils;
 
 import java.util.ArrayList;

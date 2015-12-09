@@ -1,4 +1,4 @@
-package com.leileitest.paperdemo.layout;
+package com.leileitest.paperdemo.widget;
 
 import android.content.Context;
 import android.support.v7.widget.GridLayoutManager;

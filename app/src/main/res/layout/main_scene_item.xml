@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:background="?attr/selectableItemBackground"
+    android:gravity="center_vertical|center_horizontal"
+    android:minHeight="56dp"
+    android:orientation="vertical"
+    android:paddingBottom="8dp"
+    android:paddingTop="8dp"
+    tools:background="#800000ff">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="false"
+        android:minHeight="35dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_device_tem"
+        android:visibility="gone"
+        tools:ignore="ContentDescription"/>
+
+    <TextView
+        android:id="@+id/name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        tools:text="等待开发##"/>
+
+</LinearLayout>
