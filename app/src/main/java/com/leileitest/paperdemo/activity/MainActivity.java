@@ -21,6 +21,7 @@ import com.leileitest.paperdemo.adapter.IBaseRecyclerAdapter;
 import com.leileitest.paperdemo.adapter.ListDividerItemDecoration;
 import com.leileitest.paperdemo.entity.ActEntity;
 import com.leileitest.paperdemo.utils.IntentUtils;
+import com.leileitest.paperdemo.widget.SimpePrintViewMeasureView;
 
 import java.util.List;
 
@@ -92,6 +93,8 @@ public class MainActivity extends BaseActivity {
         actEntity = new ActEntity(DialogActivity.class);
         recyclerAdapter.addItem(actEntity);
         actEntity = new ActEntity(FixViewPagerActivity.class);
+        recyclerAdapter.addItem(actEntity);
+        actEntity = new ActEntity(PrintViewMearsureActivity.class);
         recyclerAdapter.addItem(actEntity);
         recyclerAdapter.notifyDataSetChanged();
     }

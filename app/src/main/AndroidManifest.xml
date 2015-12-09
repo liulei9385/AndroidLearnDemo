@@ -31,6 +31,8 @@
 
         <activity android:name=".activity.FixViewPagerActivity"/>
 
+        <activity android:name=".activity.PrintViewMearsureActivity"/>
+
     </application>
 
 </manifest>
