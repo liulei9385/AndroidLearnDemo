@@ -2,3 +2,6 @@
 为了在异常发生时可以看到它们，你可以打开Glide中处理所有媒体加载响应的类GenericRequest的log开关。很简单，在命令行运行下面的指令即可：
 
 adb shell setprop log.tag.GenericRequest DEBUG
+
+
+adb shell setprop log.tag.GenericRequest ERROR
