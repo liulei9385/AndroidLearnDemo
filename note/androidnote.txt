@@ -1,2 +1,8 @@
 查看类文件具体信息（jdk编译版本）
 javap -verbose com\eques\icvss\core\impl\ajavap -verbose com\eques\icvss\core\impl\a
+
+过滤掉某些日志
+1.直接新建一个过滤器（过滤规则），然后加上自己的配置，尤其是通过正则表达式去实现对于某些规则的取反，从而实现过滤掉某些信息
+比如：
+在新建的规则中的by Log Tag中，输入：
+^(?!.*(IMGSRV)).*$
