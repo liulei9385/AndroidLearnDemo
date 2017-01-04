@@ -1,0 +1,1 @@
+curl -H "Content-Type: application/json; charset=UTF-8" -i -X POST  --data '{"category":"31","ostype":"1"}' http://rsdznjj.com.cn:9080/app/version
