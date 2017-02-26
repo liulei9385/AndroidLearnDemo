@@ -1,0 +1,9 @@
+忽略某些so包
+android {
+    //...
+    packagingOptions {
+        exclude "lib/arm64-v8a/**"
+        exclude "lib/x86_64/**"
+    }
+    //...
+}
