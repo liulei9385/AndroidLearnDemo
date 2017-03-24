@@ -1,0 +1,22 @@
+Android Studio在Mac下编译缓慢的可能问题
+发表于2016年3月26日由蛋 丁
+最近调试编译android项目发现Android Studio越来越慢，CPU占用十分高并导致像牛喘气一样风扇狂转，编译项目的时间也变成一分多钟。这样严重影响开发效率，因此花了两个小时来折腾。
+
+怀疑IDE本身有损坏，删除重装，无效。
+怀疑项目配置有问题，检查并优化后检查，无效。
+怀疑gradle配置有问题，修改gradle配置，无效。
+怀疑gradle版本有问题，安装最新版本gradle，失败。
+和其他同事环境做了对比后，发现只有JDK使用的版本不同，我是用的是1.8，其余的人都使用的是1.7。卸载1.8，重装1.7，搞定。
+最后效果是CPU占用虽然较高，但是风扇不会像黄牛一场叫了。之后编译时间也降低到了30秒左右。
+
+可以说用新SDK还是有风险的，特别是开源全平台的第三方SDK。不知道苹果为什么不出最新的1.7SDK？
+
+2016.04.01更新
+
+通过排查，是Android Studio自带gradle对1.8兼容不好。具体修改方式为：
+
+编辑
+vi ~/.gradle/gradle.properties
+增加
+org.gradle.java.home=/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/home
+也可以修改项目的gradle.properties达到同样效果。
