@@ -1,3 +1,8 @@
    I ran into this error as well, and it turned out that the problem for me was that a Stetho tab was open in Chrome (i.e. a tab at URL 
 chrome://inspect/#devices ), which I guess was causing the device to be in use. Closing that tab, then running adb kill-server, 
 made adb devices work again.
+
+通过以下步骤修复哦
+
+
+adb nodaemon server
