@@ -25,3 +25,8 @@ git commit -m "update .gitignore"
 
 正确的做法应该是：git rm --cached logs/xx.log，
 然后更新 .gitignore 忽略掉目标文件，最后 git commit -m "We really don't want Git to track this anymore!"
+
+git 放弃本地修改 强制更新
+git fetch --all
+git reset --hard origin/master
+git fetch 只是下载远程的库的内容，不做任何的合并 git reset 把HEAD指向刚刚下载的最新的版本
