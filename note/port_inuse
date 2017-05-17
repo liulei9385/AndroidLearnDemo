@@ -1,0 +1,13 @@
+怎么解决tomcat占用8080端口问题图文教程
+
+在dos下，输入  netstat   -ano|findstr  8080 
+
+//说明：查看占用8080端口的进程
+
+显示占用端口的进程
+
+taskkill  /pid  6856  /f 
+
+//说明，运行windows自带taskkill命令，将上面显示的进程号，结束掉。
+
+下面有图为证
