@@ -35,3 +35,11 @@ git fetch 只是下载远程的库的内容，不做任何的合并 git reset �
 问题： Auto packing the repository in background for optimum performance
 解决方案：
 git gc --prune=now
+
+
+本地分支会滚到指定版本
+
+Git reset --hard <commit ID号>
+
+推送到远程分支
+git push -f origin master
