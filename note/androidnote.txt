@@ -6,3 +6,6 @@ javap -verbose com\eques\icvss\core\impl\ajavap -verbose com\eques\icvss\core\im
 比如：
 在新建的规则中的by Log Tag中，输入：
 ^(?!.*(IMGSRV)).*$
+
+2.在一个activity中启动另一个activity且不会闪屏的解决办法
+ 在onCreate() 或这 onResume 使用startActivityForResult ,注意首先要保证startActivityForResult能正确相应哦
