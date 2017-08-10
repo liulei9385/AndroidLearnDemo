@@ -43,3 +43,7 @@ Git reset --hard <commit ID号>
 
 推送到远程分支
 git push -f origin master
+
+
+解决错误git更新错误Can't update: no tracked branch
+git branch --set-upstream-to=origin/dev_leilei
