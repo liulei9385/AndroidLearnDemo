@@ -1,0 +1,3 @@
+
+adb devices 多个相同名称解决办法
+ADB中输入adb shell，变为#后输入echo <设备新名称> > /sys/class/android_usb/android0/iSerial
