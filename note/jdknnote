@@ -1,0 +1,9 @@
+jdk10
+
+jdk10
+
+sdkmanager 报错解决
+
+vim ./sdkmanager find DEFAULT_JVM_OPTS and add --add-modules java.xml.bind argument to it.
+
+Thank it works for me. I have changed like below : DEFAULT_JVM_OPTS='"-Dcom.android.sdklib.toolsdir=$APP_HOME" --add-modules java.xml.bind' 
