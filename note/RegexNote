@@ -1,0 +1,11 @@
+测试所用的编辑器:notepad++
+
+^(\s*)\r\n
+
+根据文档格式(windows, mac, linux行尾符)不同 将其中的\r\n替换成不同行尾符
+
+windows: ^(\s*)\r\n
+
+linux: ^(\s*)\n
+
+mac: ^(\s*)\r (没用过mac,待确认)
