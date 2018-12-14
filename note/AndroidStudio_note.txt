@@ -1,0 +1,2 @@
+第一步,如下图所示,找到AndroidStudio安装目录下lib文件夹中的resources.jar文件
+第二部,然后在将自定义字体放入到jar里来应该就可以了。
