@@ -3,3 +3,6 @@ http://www.codefrom.com/
 
 开源项目分享
 http://p.codekk.com/
+
+//好用的数据库
+https://github.com/yahoo/squidb
