@@ -5,5 +5,10 @@ https://dl.google.com/dl/android/maven2/master-index.xml
 
 查看特定的依赖
 
+#lifecycle
 https://dl.google.com/dl/android/maven2/android/arch/lifecycle/group-index.xml
+#android-support
 https://dl.google.com/dl/android/maven2/com/android/support/group-index.xml
+
+#viewpager2
+https://dl.google.com/dl/android/maven2/androidx/viewpager2/group-index.xml
