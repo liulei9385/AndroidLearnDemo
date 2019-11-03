@@ -1,0 +1,4 @@
+1. Android 9.0 将 WiFiManager 的 startScan() 方法标为了废弃，前台应用 2 分钟内只能使用 4 次startScan()，后台应用 30 分钟内只能调用
+1次 startScan()，否则会直接返回 false 并且不会触发扫描操作。
+
+https://stackoverflow.com/questions/49178307/startscan-in-wifimanager-deprecated-in-android-p
