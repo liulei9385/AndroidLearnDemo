@@ -2,3 +2,7 @@
 1次 startScan()，否则会直接返回 false 并且不会触发扫描操作。
 
 https://stackoverflow.com/questions/49178307/startscan-in-wifimanager-deprecated-in-android-p
+
+2.Android 9.0 toast 显示带有报名，且布局像是剪切掉了一样的。
+解决方案：
+
