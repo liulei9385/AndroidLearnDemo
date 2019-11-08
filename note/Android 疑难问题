@@ -6,3 +6,24 @@ https://stackoverflow.com/questions/49178307/startscan-in-wifimanager-deprecated
 2.Android 9.0 toast 显示带有报名，且布局像是剪切掉了一样的。
 解决方案：
 
+3.kotlin-android-extensions
+定义在xml中view的id就是这个对象
+
+<TextView
+        android:id="@+id/welcomeTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55.5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="您好，欢迎"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topFL" />
+        
+        
+welcomeTv.text = "您好，欢迎"
+
+
+
