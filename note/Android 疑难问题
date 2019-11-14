@@ -25,5 +25,19 @@ https://stackoverflow.com/questions/49178307/startscan-in-wifimanager-deprecated
         
 welcomeTv.text = "您好，欢迎"
 
+4.【Android Studio】ParseError at [row,col]:[2,6] Message: 不允许有匹配 "[xX][mM][lL]" 的处理指令目标
+
+ParseError at [row,col]:[2,6]
+Message: 不允许有匹配 "[xX][mM][lL]" 的处理指令目标。
+
+【错误原因】
+没有从第一行开始写噗
+
+【解决办法】
+把第一行的回车删掉，也就是从第一行开始写
+
+配置文件里是这样写的
+<?xml version="1.0" encoding="utf-8"?><?xml version="1.0" encoding="utf-8"?>
+
 
 
