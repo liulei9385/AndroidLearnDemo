@@ -20,7 +20,7 @@ gradlew.bat :app:dependencyInsight --configuration debugCompileClasspath --depen
 
 
 #build.gradle 修改生成的apk的名字
- //修改生成的apk名字
+ //修改生成的apk名字（已废弃）
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
             def oldFile = output.outputFile
@@ -33,6 +33,17 @@ gradlew.bat :app:dependencyInsight --configuration debugCompileClasspath --depen
                 def releaseApkName = 'NativeAudio_' + variant.productFlavors[0].name + "_" + variant.buildType.name + defaultConfig.versionName + '.apk'
                 output.outputFile = new File(oldFile.parent, releaseApkName)
             }*/
+        }
+    }
+
+// android Studio 3.5 修改了
+ android.applicationVariants.all { ApplicationVariantImpl variant ->
+
+        variant.variantData.outputScope.apkDatas.each {
+            apkData ->
+                def fileName = "BookCounterDemo_${variant.versionName}_${releaseTime()}_${apkData.fullName}.apk"
+                apkData.outputFileName = fileName
+                println apkData.getOutputFileName()
         }
     }
 
