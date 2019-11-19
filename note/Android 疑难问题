@@ -40,4 +40,23 @@ Message: 不允许有匹配 "[xX][mM][lL]" 的处理指令目标。
 <?xml version="1.0" encoding="utf-8"?><?xml version="1.0" encoding="utf-8"?>
 
 
+5.在 attrs,xml 里面定义属性，有重复的属性时编译报错 Error: Found item Attr/font more than one time Error: Execution failed for task 
+
+解决办法：
+
+//定义属性
+<attr name="titleTextSize" format="dimension" />
+<attr name="titleTextColorRes" format="reference" />
+//使用属性
+<declare-styleable name="SettingItemView">
+    <attr name="titleTextSize" />
+    <attr name="titleTextColorRes" />
+</declare-styleable>
+
+<declare-styleable name="FilterView">
+    <attr name="titleTextSize" />
+    <attr name="titleTextColorRes" />
+</declare-styleable>
+这样书写后编译通过
+
 
