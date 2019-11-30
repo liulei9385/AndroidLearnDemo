@@ -60,3 +60,5 @@ Message: 不允许有匹配 "[xX][mM][lL]" 的处理指令目标。
 这样书写后编译通过
 
 
+ python -m http.server --bind 0.0.0.0 8000
+
