@@ -13,11 +13,13 @@ android {
 如下是一个例子：
 gradlew.bat startActivity:dependencyInsight --dependency appcompat --configuration androidTestCompile
 #gradle3.0
-gradlew.bat :app:dependencyInsight --configuration debugCompileClasspath --dependency retrofit
-gradlew.bat :commonModel:dependencyInsight --configuration debugCompileClasspath --dependency coroutines
+gradlew.bat :app:dependencyInsight --configuration debugImplementation --dependency retrofit
+gradlew.bat :commonModel:dependencyInsight --configuration debugImplementation --dependency coroutines
 
 这个任务在了解一个依赖关系，找出某个依赖来自于哪里以及为什么要选择某个版本是非常有用的，你可以查看DependencyInsightReportTask类的API文档来获取更多的信息。
-内建的dependencyInsight 任务是help任务组的一部分。这个任务需要配置依赖和配置。输出报表依赖于你描述的某个依赖的某个配置。如果使用了Java相关的插件。dependencyInsight 预先配置的是'compile' 配置，因为一般情况下他是我们感兴趣的编译依赖。你应该通过在命令行使用 '--dependency'来描述你感兴趣的依赖。如果你不喜欢默认的配置你可以通过'--configuration' 选项来选择。查看 DependencyInsightReportTask 类的API来获取更多相关的信息。
+内建的dependencyInsight 任务是help任务组的一部分。这个任务需要配置依赖和配置。输出报表依赖于你描述的某个依赖的某个配置。如果使用了Java相关的插件。
+dependencyInsight 预先配置的是'compile' 配置，因为一般情况下他是我们感兴趣的编译依赖。你应该通过在命令行使用 '--dependency'来描述你感兴趣的依赖。
+如果你不喜欢默认的配置你可以通过'--configuration' 选项来选择。查看 DependencyInsightReportTask 类的API来获取更多相关的信息。
 
 
 #build.gradle 修改生成的apk的名字
