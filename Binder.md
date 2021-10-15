@@ -1,0 +1,4 @@
+# Binder
+
+Android应用程序是由Activity、Service、Broascast Receiver 和 Content provider 四大组件的一个或多个组成的。有时这些组件运行在同一进程，有时候运行在不同的进程。这些进程间的通信就依赖于Binder的IPC机制。不仅如此Android系统对应用层提供的各种服务如：ActivityManagerService、PackageManagerService等都是基于Binder IPC 机制来是实现的。Binder机制在Android的位置非常重要。
+
