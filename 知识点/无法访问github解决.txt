@@ -1,0 +1,7 @@
+访问不了github输入一下这个
+
+1) ipconfig /flushdns 
+2) ipconfig /registerdns 
+3) ipconfig /release 
+4) ipconfig /renew 
+5) netsh winsock reset

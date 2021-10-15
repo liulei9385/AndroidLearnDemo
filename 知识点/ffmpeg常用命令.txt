@@ -1,0 +1,41 @@
+1.压缩音频文件
+
+ffmpeg -i "PZONKA190313.wav" -b:a 64k -acodec mp3 -ar 44100 -ac 1 "1.mp3"
+命令参数解释：
+ -i "PZONKA190313.wav"  输入的音频文件
+ -b:a 64k               表示音频的码率为64kb/s，即8kB/s；
+ -acodec mp3            表示设定声音编解码器为mp3；
+ -ar 44100              表示设定采样率为44100；
+ "1.mp3"                表示输出保存的文件名。
+
+
+2.切割音频文件
+
+ffmpeg  -i source.mp3  -vn -acodec copy -ss 00:03:21.36 -t 00:00:41 output.mp3
+
+
+3.视频转码
+
+    在优先保证画面质量（也不太在乎转码时间）的情况下，使用-crf参数来控制转码是比较适宜的。这个参数的取值范围为0——51，其中0为无损模式，数值越大，画质越差，生成的文件却越小。从主观上讲，18——28是一个合理的范围。18被认为是视觉无损的（从技术角度上看当然还是有损的），它的输出视频质量和输入视频相当。
+
+    ffmpeg -i D:\src.mov -c:v libx264 -preset veryslow -crf 18 -c:a copy D:\dest1.mp4
+    ffmpeg -i g:\Videos\ -c:v libx264 -preset superfast -crf 18 -c:a copy g:\dest1.mp4
+
+    ffmpeg -y -r 1 -i C:\Download\pic\a%d.png -t 12 -vcodec libx264 G:\Videos\output.mp4
+
+
+4.视频剪裁
+crop=1080:1080:0:420 才裁剪参数，具体含义是 crop=width:height:x:y，其中 width 和 height 表示裁剪后的尺寸，x:y 表示裁剪区域的左上角坐标。比如当前这个示例，我们只需要保留竖向视频的中间部分，所以 x 不用偏移，故传入0，而 y 则需要向下偏移：(1920 – 1080) / 2 = 420
+ffmpeg -i a.mp4 -strict -2 -vf crop=750:400:0:432 out.mp4
+
+
+5.colorSpace 转换
+
+// bt709
+ffmpeg.exe -i C:\Users\Administrator\Desktop\IMG_4768.MP4 -pix_fmt yuv420p -colorspace 1 -color_primaries 1 -color_trc 1 video.mp4
+
+
+//bt 601 ntsc
+ffmpeg.exe -i C:\Users\Administrator\Desktop\IMG_4768.MP4 -pix_fmt yuv420p -colorspace smpte170m -color_primaries smpte170m -color_trc smpte170m video.mp4
+
+ffmpeg.exe -i C:\Users\Administrator\Desktop\IMG_4768.MP4 -pix_fmt yuv420p -colorspace bt470bg -color_primaries bt470bg -color_trc gamma28 video.mp4

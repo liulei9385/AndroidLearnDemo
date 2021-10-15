@@ -1,0 +1,21 @@
+    
+    block: suspend CoroutineScope.() -> Unit
+
+    //SuspendLambda
+
+    val newContext = newCoroutineContext(context)
+    val coroutine = if (start.isLazy)
+        LazyStandaloneCoroutine(newContext, block) else
+        StandaloneCoroutine(newContext, active = true)
+    coroutine.start(start, coroutine, block)
+    return coroutine
+
+    start: CoroutineStart, receiver: R, block: suspend R.() -> T
+    CoroutineStart.start(block, receiver, coroutine)
+
+    block.startCoroutineCancellable
+    runSafely(completion) {
+        createCoroutineUnintercepted(receiver, completion).intercepted().resumeCancellableWith(Result.success(Unit), onCancellation)
+    }
+
+    createCoroutineFromSuspendFunction(coroutine,block)
